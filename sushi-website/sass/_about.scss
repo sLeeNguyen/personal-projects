@@ -1,0 +1,118 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding: $spacer * 4 $spacer * 2;
+
+  &__above {
+    display: flex;
+    justify-content: center;
+    margin-bottom: $spacer * 4;
+
+    & > * {
+      &:not(:last-child) {
+        margin-right: $spacer * 3;
+      }
+    }
+
+    &-text {
+      max-width: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      &-description {
+        text-align: center;
+        margin-bottom: $spacer * 2;
+      }
+    }
+
+    &-img {
+      height: 260px;
+    }
+  }
+
+  // ============
+
+  &__below {
+    display: grid;
+    column-gap: $spacer * 2;
+    row-gap: $spacer * 2;
+    grid-template-columns: auto auto auto auto;
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      height: 350px;
+    }
+
+    &-img {
+      width: 100%;
+      position: relative;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      &--name {
+        @extend .text-default;
+        position: absolute;
+        bottom: $spacer * 1.5;
+        left: $spacer * 2;
+
+        p {
+          font-size: 0.75rem;
+          line-height: 1;
+          letter-spacing: 0.05em;
+        }
+      }
+
+      &-underline {
+        margin-top: $spacer * 0.5;
+        width: 100%;
+        height: 1px;
+        border-top: 1px solid;
+      }
+    }
+  }
+
+  @media (max-width: 700px) {
+    &__above {
+      flex-wrap: wrap;
+
+      &-text {
+        max-width: initial;
+        width: 100%;
+        margin-right: 0 !important;
+        margin-bottom: $spacer * 3;
+      }
+    }
+
+    &__below {
+      grid-template-columns: auto auto;
+      // max-width: 600px;
+      margin: auto;
+    }
+  }
+
+  @media (max-width: 484px) {
+    &__above {
+      & > * {
+        &:not(:last-child) {
+          margin-right: $spacer * 2;
+        }
+      }
+
+      &-img {
+        height: auto;
+        width: calc((100% - $spacer * 2) / 2);
+      }
+    }
+  }
+}

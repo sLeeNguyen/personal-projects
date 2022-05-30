@@ -1,0 +1,16 @@
+{
+  "name": "sushi-website",
+  "version": "0.1.0",
+  "description": "A landing page for Food restaurant",
+  "main": "index.js",
+  "author": "sLeeNguyen",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {},
+  "devDependencies": {
+    "sass": "^1.51.0"
+  },
+  "scripts": {
+    "sass:watch": "sass --watch sass/:css/"
+  }
+}

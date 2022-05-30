@@ -1,0 +1,151 @@
+.header {
+  z-index: 1000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid change-color($color: $primary-light, $alpha: 0.75);
+  padding-left: $spacer * 3;
+  padding-right: $spacer * 3;
+  transition: all 250ms linear;
+
+  &--fixed {
+    position: fixed;
+    background-color: black;
+  }
+
+  &--hide {
+    top: -90px;
+  }
+
+  &--left {
+    display: flex;
+    align-items: center;
+  }
+
+  &__menu {
+    display: none;
+    margin-right: $spacer * 3;
+    &-icon {
+      cursor: pointer;
+      width: 28px;
+    }
+  }
+
+  .logo {
+    &__img {
+      height: 50px;
+      display: block;
+    }
+  }
+
+  .nav {
+    &__link {
+      @extend .text-default;
+      text-transform: uppercase;
+      font-size: 1rem;
+      text-decoration: none;
+      padding-left: $spacer * 2.5;
+      padding-right: $spacer * 2.5;
+      letter-spacing: 0.1em;
+      line-height: 1.25;
+      margin-bottom: $spacer * 2;
+      position: relative;
+
+      &--active {
+        color: $primary-light;
+
+        &::after {
+          width: 50% !important;
+        }
+      }
+
+      &:not(.nav__link-phone) {
+        &::after {
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 6px;
+          left: 50%;
+          bottom: -16px;
+          transform: translateX(-50%);
+          border-top: 1px solid $primary-light;
+          border-bottom: 1px solid $primary-light;
+          transition: width 300ms linear;
+        }
+
+        &:hover {
+          &::after {
+            width: 50%;
+          }
+        }
+      }
+
+      &-phone {
+        margin-left: $spacer * 2;
+        padding-right: 0;
+        transition: color 300ms linear;
+        &:hover {
+          color: $primary-light;
+        }
+
+        &--number {
+          position: relative;
+          padding-left: $spacer * 0.5;
+          padding-right: $spacer * 0.5;
+
+          &:after {
+            content: "";
+            position: absolute;
+            bottom: -($spacer * 0.5);
+            left: 0;
+            border-top: 1px solid;
+            width: 100%;
+          }
+        }
+
+        &--country {
+          font-size: 1.25rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1200px) {
+    &__menu {
+      display: block;
+    }
+
+    .nav {
+      &__link {
+        &:not(.nav__link-phone) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 484px) {
+    &--left {
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+
+    .logo {
+      order: 1;
+    }
+
+    &__menu {
+      order: 2;
+      margin-right: 0;
+    }
+
+    .nav {
+      display: none;
+    }
+  }
+}

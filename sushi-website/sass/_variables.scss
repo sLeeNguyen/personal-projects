@@ -1,0 +1,18 @@
+$bg-color: #ffffff !default;
+
+$primary: #633615 !default;
+$primary-light: #ffcc70 !default;
+
+$colors: (
+  default: #ffffff,
+  primary: $primary,
+  light: $primary-light,
+) !default;
+
+$font-weights: (
+  light: 300,
+  regular: 400,
+  bold: 700,
+) !default;
+
+$spacer: 8px !default;

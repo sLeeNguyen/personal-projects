@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-family: "Bahnschrift", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: 0.1em;
+}
+
+body {
+  background-color: $bg-color;
+  scroll-behavior: smooth;
+}
+
+button,
+input {
+  font-family: "Bahnschrift", sans-serif;
+  font-weight: 300;
+}
+
+p {
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+}
+
+.btn {
+  padding: $spacer $spacer * 2;
+  min-width: 84px;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+}
+
+@each $color_name, $color in $colors {
+  .text-#{$color_name} {
+    color: $color;
+  }
+
+  .btn-#{$color_name} {
+    color: $color;
+
+    &.btn-outlined {
+      border: 1px solid $color;
+      background-color: transparent;
+    }
+    &.btn-contained {
+      background-color: $color;
+      color: #ffffff;
+    }
+  }
+
+  .bg-#{$color_name} {
+    background-color: $color;
+  }
+}
+
+@each $fw_name, $val in $font-weights {
+  .fw-#{$fw_name} {
+    font-weight: $val;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  line-height: 2.5;
+}
+
+.section-button {
+  @extend .btn, .btn-outlined, .btn-primary;
+  text-transform: uppercase;
+  min-width: 140px;
+  position: relative;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    background-color: $bg-color;
+  }
+}
