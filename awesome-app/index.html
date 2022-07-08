@@ -9,8 +9,10 @@
     <title>Daccord</title>
   </head>
   <body>
-    <div id="notification" class="notification hidden">Sorry! We support only desktop mode.</div>
-    <div id="app" class="app">
+    <div id="notification" class="notification text-fm-sfr hidden">
+      Sorry! Please switch to a larger screen to see the content.
+    </div>
+    <div id="app" class="app hidden">
       <!-- svg clip-path -->
       <svg class="svg-hidden" viewBox="0 0 64 68" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -126,7 +128,6 @@
                   </filter>
                 </defs>
               </svg>
-
               <div class="tab__item" title="Home">
                 <div class="tab__effect"></div>
                 <img class="tab__img" src="./assets/images/tabs/t1.png" alt="home" />
@@ -230,6 +231,7 @@
           </div>
           <!-- end categories -->
         </div>
+
         <div class="side-menu--bottom">
           <div class="side-menu--bottom_above">
             <svg
@@ -968,5 +970,6 @@
       </div>
       <!-- end sidebar right -->
     </div>
+    <script src="./js/index.js"></script>
   </body>
 </html>

@@ -176,6 +176,12 @@ p {
   background: rgba(255, 255, 255, 0.4);
 }
 
+.notification {
+  font-size: 36px;
+  text-align: center;
+  padding: 0 16px;
+}
+
 .shape-outer, .side-menu--bottom_below .action__item--active {
   display: flex;
   justify-content: center;
