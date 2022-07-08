@@ -1,0 +1,49 @@
+.shape-outer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shape-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.lg-1 {
+  background-image: linear-gradient(131.88deg, #a73ee7 14.48%, #00ebff 83.43%);
+}
+.lg-2 {
+  background-image: linear-gradient(105.66deg, #01b7c5 -0.8%, #782c96 104.84%), linear-gradient(0deg, #2c2f48, #2c2f48);
+}
+.bg-3 {
+  background-image: conic-gradient(
+    from 180deg at 50% 50%,
+    #7976e8 -57.77deg,
+    #f449f4 58.71deg,
+    #0019c0 177.03deg,
+    #7976e8 302.23deg,
+    #f449f4 418.71deg
+  );
+}
+.bg-white {
+  background: white;
+}
+.bg-black {
+  background: black;
+}
+
+.trigon {
+  -webkit-clip-path: url("#trigon");
+  clip-path: url("#trigon");
+}
+.hexagon {
+  -webkit-clip-path: url("#hexagon");
+  clip-path: url("#hexagon");
+}
+.hexagon-2 {
+  -webkit-clip-path: url("#hexagon-2");
+  clip-path: url("#hexagon-2");
+}

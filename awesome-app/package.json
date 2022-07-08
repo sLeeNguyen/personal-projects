@@ -1,0 +1,13 @@
+{
+  "name": "awesome-app",
+  "version": "0.1.0",
+  "description": "Awesome desktop app",
+  "main": "index.js",
+  "scripts": {
+    "sass:watch": "sass --watch sass/:css/"
+  },
+  "author": "sLeeNguyen",
+  "devDependencies": {
+    "sass": "^1.53.0"
+  }
+}

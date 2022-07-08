@@ -1,0 +1,304 @@
+.main-content {
+  flex-grow: 1;
+  background-color: $bg-primary;
+
+  .card-type-1 {
+    height: 208px;
+  }
+  .card-type-2 {
+    height: 152px;
+  }
+  .card-type-3 {
+    height: 200px;
+  }
+
+  &-header {
+    height: 44px;
+    background-color: $bg-secondary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-title {
+    @extend .text-fm-sfr;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 29px;
+  }
+  &-subtitle {
+    @extend .text-fm-sfr;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 26px;
+  }
+
+  &-card {
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+
+    &__text {
+      font-size: 13px;
+      line-height: 16px;
+    }
+
+    &__meta {
+      display: flex;
+      justify-content: space-between;
+
+      &-item {
+        display: flex;
+        align-items: center;
+
+        > svg {
+          margin-right: 4px;
+        }
+
+        span {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  &-card-border {
+    border-radius: 20px;
+    --border-color: linear-gradient(119.41deg, rgba(1, 183, 197, 0.7) -9.17%, rgba(120, 44, 150, 0.7) 109.53%);
+    --border-width: 1px;
+    background: var(--border-color);
+    padding: var(--border-width);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  .header-search {
+    width: 60%;
+    background: linear-gradient(180deg, rgba(46, 51, 90, 0.3) 0%, rgba(28, 27, 51, 0.3) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 4px;
+
+    &__input {
+      width: 50px;
+      background-color: transparent;
+      border: none;
+      outline: none;
+      transition: width, flex-grow 250ms linear;
+
+      &:focus {
+        flex-grow: 1;
+        width: auto;
+      }
+    }
+
+    &__icon {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .content {
+    padding: 24px;
+    padding-bottom: 0;
+    height: 800px;
+
+    .vertical-scroll-container {
+      margin: 0 -20px;
+      padding: 0 20px;
+
+      > * {
+        margin-bottom: 32px;
+      }
+    }
+  }
+
+  &-cover-photo {
+    height: 180px;
+    background-image: url(../assets/images/explore/cover.png);
+    background-position: center -180px;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .main-content-title {
+      text-align: center;
+    }
+  }
+
+  &-section {
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 12px;
+
+      &-action span {
+        cursor: pointer;
+        transition: color 200ms linear;
+
+        &:hover {
+          @extend .text-default;
+        }
+      }
+    }
+
+    &__body {
+      display: flex;
+
+      > *:not(:last-child) {
+        margin-right: 24px;
+      }
+
+      > * {
+        flex-shrink: 1;
+        width: 50%;
+      }
+    }
+
+    &.featured-community,
+    &.recent-add {
+      .main-content-card {
+        background-image: var(--img-src);
+        background-position: center var(--y);
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        &__body {
+          position: relative;
+          width: 100%;
+          height: 150px;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          padding: 12px 12px 10px 12px;
+        }
+      }
+    }
+
+    &.featured-community {
+      .blur-bg {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 150px;
+        -webkit-clip-path: url("#featured-community-blur");
+        clip-path: url("#featured-community-blur");
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+          radial-gradient(22.52% 54.93% at 49.06% 30.28%, #31376f 0%, rgba(137, 75, 162, 0) 100%),
+          conic-gradient(
+            from 180deg at 50% 36.97%,
+            rgba(121, 118, 232, 0.9) -110.28deg,
+            rgba(244, 73, 244, 0.9) 6.37deg,
+            rgba(0, 25, 192, 0.9) 153.67deg,
+            rgba(121, 118, 232, 0.9) 249.72deg,
+            rgba(244, 73, 244, 0.9) 366.37deg
+          );
+        // backdrop-filter: blur(10px); // UI bug with blur
+      }
+
+      .avatar {
+        position: absolute;
+        left: 50%;
+        top: 2px;
+        transform: translateX(-50%);
+        width: 42px;
+        height: 42px;
+        // background-color: white;
+        z-index: 4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    &.popular-now {
+      .main-content-card {
+        > img {
+          width: 168px;
+          position: absolute;
+          top: -25px;
+          left: -32px;
+
+          &.nft-img {
+            top: -10px;
+            left: -16px;
+            bottom: -10;
+            height: calc(100% + 10px);
+            object-fit: cover;
+          }
+        }
+
+        &__body {
+          position: relative;
+          margin-left: 100px;
+          background: linear-gradient(123.59deg, #5b7fd6 0.3%, #1bb1d0 41.03%);
+          border-radius: 20px;
+          overflow: hidden;
+
+          &--bg {
+            -webkit-clip-path: url("#popular-now-bg");
+            clip-path: url("#popular-now-bg");
+            background: #393d5e;
+            box-shadow: 0px -1px 20px rgba(0, 0, 0, 0.5); // doesn't work
+            margin-left: 2px;
+            padding: 20px 16px 10px 45px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+          }
+        }
+      }
+
+      .avatar {
+        width: 60px;
+        height: 64px;
+        position: absolute;
+        top: 50%;
+        left: 100px;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+      }
+    }
+
+    &.recent-add {
+      .main-content-card {
+        &__bg {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          -webkit-clip-path: url("#recent-add-bg");
+          clip-path: url("#recent-add-bg");
+          height: 160px;
+          background: #393d5e;
+          box-shadow: 0px -1px 20px rgba(0, 0, 0, 0.5); // doesn't work with clip-path, TODO: another solution?
+        }
+
+        &__body {
+          height: 135px;
+          padding: 24px 12px 10px 12px;
+          justify-content: space-between;
+        }
+
+        .avatar {
+          position: absolute;
+          width: 40px;
+          height: 42px;
+          top: -21px;
+          right: 15.2%;
+        }
+      }
+    }
+  }
+}

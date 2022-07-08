@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  background: radial-gradient(60% 106% at 34.94% 108.33%, #f7cbfd 0%, #7758d1 100%) no-repeat;
+  scroll-behavior: smooth;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #ffffff;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+button,
+input,
+p {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+@each $color_name, $color in $text-colors {
+  .text-#{$color_name} {
+    color: $color;
+  }
+}
+
+input:focus::placeholder {
+  @extend .text-lighter;
+}
+
+input::placeholder {
+  @extend .text-light;
+}
+
+@each $key, $val in $font-weights {
+  .fw-#{$val},
+  .fw-#{$key} {
+    font-weight: $val;
+  }
+}
+
+.bg-primary {
+  background-color: $bg-primary;
+}
+.bg-secondary {
+  background-color: $bg-secondary;
+}
+
+.text-fm-lato {
+  font-family: "Lato", sans-serif;
+}
+.text-fm-sfr {
+  font-family: "SF Compact Rounded", sans-serif;
+}
+.text-fm-sfd {
+  font-family: "SF Compact Display", sans-serif;
+}
+
+.app {
+  width: 1280px;
+  min-width: 1280px;
+  height: 844px;
+  border-radius: 16px;
+  overflow: auto;
+  display: flex;
+}
+
+.svg {
+  font-style: normal;
+  font-size: 14px;
+  line-height: 17px;
+  fill: $icon-color;
+}
+
+.hidden {
+  display: none;
+}
+
+.svg-hidden {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.vertical-scroll-container {
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-right: -10px;
+  padding-right: 6px;
+  height: 100%;
+
+  /* width */
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 5px;
+  }
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: transparent;
+    width: 4px;
+    border-radius: 5px;
+  }
+
+  &:hover {
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.2);
+    }
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
+  }
+}
