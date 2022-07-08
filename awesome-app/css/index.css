@@ -6,12 +6,12 @@
 }
 @font-face {
   font-family: "SF Compact Rounded";
-  src: url("../assets/fonts/sf-compact-font-family/SF-Compact-Rounded-Semibold.ttf");
+  src: url("../assets/fonts/SF-Compact-Rounded-Semibold.ttf");
   font-weight: 600;
 }
 @font-face {
   font-family: "SF Compact Rounded";
-  src: url("../assets/fonts/sf-compact-font-family/SF-Compact-Rounded-Semibold.ttf");
+  src: url("../assets/fonts/SF-Compact-Rounded-Semibold.ttf");
   font-weight: 700;
 }
 @font-face {
@@ -49,6 +49,7 @@ body {
   background: radial-gradient(60% 106% at 34.94% 108.33%, #f7cbfd 0%, #7758d1 100%) no-repeat;
   scroll-behavior: smooth;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
@@ -56,6 +57,7 @@ body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   font-size: 15px;
+  padding: 24px 16px 16px 16px;
 }
 
 button,
@@ -115,6 +117,7 @@ p {
 }
 
 .app {
+  position: relative;
   width: 1280px;
   min-width: 1280px;
   height: 844px;
@@ -180,6 +183,21 @@ p {
   font-size: 36px;
   text-align: center;
   padding: 0 16px;
+}
+
+.copyright {
+  margin-top: 16px;
+}
+.copyright .developer {
+  font-size: 16px;
+  color: #000000;
+}
+.copyright .developer a {
+  text-decoration: none;
+  color: inherit;
+}
+.copyright .developer a:hover {
+  text-decoration: underline;
 }
 
 .shape-outer, .side-menu--bottom_below .action__item--active {

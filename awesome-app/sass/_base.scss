@@ -13,6 +13,7 @@ body {
   background: radial-gradient(60% 106% at 34.94% 108.33%, #f7cbfd 0%, #7758d1 100%) no-repeat;
   scroll-behavior: smooth;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
@@ -20,6 +21,7 @@ body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   font-size: 15px;
+  padding: 24px 16px 16px 16px;
 }
 
 button,
@@ -69,6 +71,7 @@ input::placeholder {
 }
 
 .app {
+  position: relative;
   width: 1280px;
   min-width: 1280px;
   height: 844px;
@@ -136,4 +139,21 @@ input::placeholder {
   font-size: 36px;
   text-align: center;
   padding: 0 16px;
+}
+
+.copyright {
+  margin-top: 16px;
+
+  .developer {
+    font-size: 16px;
+    color: #000000;
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 }
