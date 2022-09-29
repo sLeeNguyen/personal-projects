@@ -4,7 +4,7 @@
 
 - [Sushi landingpage][sushi-landingpage]
 - [Daccord UI][daccord]
-- [QLTC](qltc)
+- [QLTC][qltc]
 
 [sushi-landingpage]: https://github.com/sLeeNguyen/personal-projects/tree/main/sushi-website
 [daccord]: https://github.com/sLeeNguyen/personal-projects/tree/main/awesome-app
